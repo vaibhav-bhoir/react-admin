@@ -3,11 +3,29 @@
 }
 
 .layout__content {
-    padding-left: var(--sidebar-width);
+    /* padding-left: var(--sidebar-width); */
+    padding-left: 78px;
     background-color: var(--second-bg);
     min-height: 100vh;
+
 }
+
+/* .sidebar.close ~ .layout__content {
+    padding-left: 78px;
+} */
 
 .layout__content-main {
     padding: 30px;
+}
+
+@media screen and (max-width:768px) {
+    .layout__content-main {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .layout__content {
+        padding-left: 55px;
+    }
 }

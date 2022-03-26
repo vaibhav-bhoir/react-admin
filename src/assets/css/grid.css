@@ -108,6 +108,27 @@
     }
 }
 
+
+@media screen and (max-width:768px) {
+    .col-6 {
+        width: 100%;
+    }
+    .col-6.custom-card .col-6{
+        width: 50%;
+    }
+    .col-4, .col-8 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:576px) {
+    
+    .col-6.custom-card .col-6{
+        width: 100%;
+    }
+    
+}
+
 /* SMALL SCREEN */
 
 @media only screen and (max-width: 500px) {

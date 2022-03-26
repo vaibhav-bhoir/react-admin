@@ -151,3 +151,10 @@ input:focus {
     background-color: var(--main-color-orange);
     color: #fff;
 }
+
+@media screen and (max-width:576px) {
+    .card {
+        padding: 15px;
+    }
+    
+}

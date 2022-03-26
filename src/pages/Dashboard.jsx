@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 
 import { Link } from 'react-router-dom'
 
@@ -170,7 +170,7 @@ const Dashboard = () => {
         <div>
             <h2 className="page-header">Dashboard</h2>
             <div className="row">
-                <div className="col-6">
+                <div className="col-6 custom-card">
                     <div className="row">
                         {
                             statusCards.map((item, index) => (

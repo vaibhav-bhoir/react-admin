@@ -6,6 +6,18 @@
     height: var(--topnav-height);
 }
 
+@media screen and (max-width:576px) {
+    .topnav {
+        padding: 0 15px 15px;
+    }
+
+    .topnav .topnav__right-user {
+        display: none;
+    }
+
+   
+}
+
 .topnav__search {
     position: relative;
     height: 50px;
