@@ -48,7 +48,7 @@ const Sidebar = () => {
                         {
                             sidebar_items.map((item, index) => (
                                 <li className="nav-link" key={index}>
-                                    <a href={item.route} className={location.pathname == item.route ? "active" : ""}>
+                                    <a href={item.route} className={location.pathname === item.route ? "active" : ""}>
                                         <i className={`${item.icon} icon`}></i>
                                         <span className="text nav-text">{item.display_name}</span>
                                     </a>
