@@ -14,8 +14,6 @@
     .topnav .topnav__right-user {
         display: none;
     }
-
-   
 }
 
 .topnav__search {
@@ -57,7 +55,7 @@
 .notification-item {
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 8px;
 }
 
 .notification-item:hover {
@@ -67,6 +65,10 @@
 .notification-item > i {
     margin-right: 20px;
     font-size: 1.5rem;
+}
+
+.notification-item span {
+    font-size: 14px;
 }
 
 .topnav__right-user {

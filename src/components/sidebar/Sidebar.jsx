@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import './sidebar.css'
 import sidebar_items from '../../assets/JsonData/sidebar_routes.json'
@@ -10,21 +10,42 @@ const curr_user = {
     image: user_image
 }
 
+let useClickOutside = (handler) => {
+    let domNode = useRef();
+
+    useEffect(() => {
+        let maybeHandler = (event) => {
+            if (!domNode.current.contains(event.target)) {
+            handler();
+            }
+        };
+    
+        document.addEventListener("mousedown", maybeHandler);
+    
+        return () => {
+            document.removeEventListener("mousedown", maybeHandler);
+        };
+    });
+
+    return domNode;
+};
+
 const Sidebar = () => {
 
     const location = useLocation();
-
     
-
-
     const [sidebarCollapse, setSidebarCollapse] = useState(true);
-
-    const toggleClass = () => {
+    
+    const toggleClass = ( ) => {
         setSidebarCollapse(!sidebarCollapse);
     };
+    
+    let domNode = useClickOutside(() => {
+        setSidebarCollapse(true);
+    });
 
     return (
-        <nav className={`sidebar ${sidebarCollapse ? "close" : ""}`} >
+        <nav className={`sidebar ${sidebarCollapse ? "close" : ""}`}  ref={domNode}>
             <header>
                 <div className="image-text">
                     <span className="image">

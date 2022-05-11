@@ -20,6 +20,7 @@ const Dropdown = props => {
 
     const dropdown_toggle_el = useRef(null)
     const dropdown_content_el = useRef(null)
+    const content = props.renderItems ? props.contentData.map((item, index) => props.renderItems(item, index)) : ''
 
     clickOutsideRef(dropdown_content_el, dropdown_toggle_el)
     
@@ -38,7 +39,7 @@ const Dropdown = props => {
             </button>
             <div ref={dropdown_content_el} className="dropdown__content">
                 {
-                    props.contentData && props.renderItems ? props.contentData.map((item, index) => props.renderItems(item, index)) : ''
+                    props.contentData && props.renderItems ? content : ''
                 }
                 {
                     props.renderFooter ? (

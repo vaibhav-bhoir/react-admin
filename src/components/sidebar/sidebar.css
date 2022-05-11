@@ -61,6 +61,12 @@ body.dark{
     margin-top: 10px;
 }
 
+@media screen and (max-width:576px) {
+    .sidebar li{
+        height: 43px;
+    }
+}
+
 .sidebar header .image,
 .sidebar .icon{
     min-width: 52px;
@@ -68,7 +74,7 @@ body.dark{
 }
 
 .sidebar .icon{
-    min-width: 52px;
+    min-width: 50px;
     border-radius: 6px;
     height: 100%;
     display: flex;

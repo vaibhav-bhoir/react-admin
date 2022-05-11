@@ -29,8 +29,16 @@ const Table = props => {
         setCurrPage(page)
     }
 
+    const [query, setQuery] = useState("");
+
+    const filterTable =  dataShow.filter((user) => user.name.toLowerCase().includes(query) )
+
     return (
         <div>
+            <div className="topnav__search" style={{marginBottom: "12px"}}>
+                <input className="search" placeholder="Search..." onChange={(e) => setQuery(e.target.value.toLowerCase())}/>
+                <i className='bx bx-search'></i>
+            </div>
             <div className="table-wrapper">
                 <table>
                     {
@@ -48,7 +56,11 @@ const Table = props => {
                         props.bodyData && props.renderBody ? (
                             <tbody>
                                 {
-                                    dataShow.map((item, index) => props.renderBody(item, index))
+                                    filterTable.length === 0 ? (
+                                        <tr className='no-record'>
+                                            <td colSpan={4}>No Record Found</td>
+                                        </tr>
+                                    ) : filterTable.map((item, index) => props.renderBody(item, index))
                                 }
                             </tbody>
                         ) : null

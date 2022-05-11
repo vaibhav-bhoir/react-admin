@@ -27,9 +27,7 @@ td:not(:first-child){
     min-width: 170px;
 }
 
-
-
-tbody > tr:hover {
+tbody > tr:not(.no-record):hover {
     background-color: var(--main-color);
     color: var(--txt-white);
 }

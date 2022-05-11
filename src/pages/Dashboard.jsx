@@ -53,27 +53,27 @@ const topCustomers = {
     ],
     body: [
         {
-            "username": "john doe",
+            "name": "john doe",
             "order": "490",
             "price": "$15,870"
         },
         {
-            "username": "frank iva",
+            "name": "frank iva",
             "order": "250",
             "price": "$12,251"
         },
         {
-            "username": "anthony baker",
+            "name": "anthony baker",
             "order": "120",
             "price": "$10,840"
         },
         {
-            "username": "frank iva",
+            "name": "frank iva",
             "order": "110",
             "price": "$9,251"
         },
         {
-            "username": "anthony baker",
+            "name": "anthony baker",
             "order": "80",
             "price": "$8,840"
         }
@@ -86,7 +86,7 @@ const renderCusomerHead = (item, index) => (
 
 const renderCusomerBody = (item, index) => (
     <tr key={index}>
-        <td>{item.username}</td>
+        <td>{item.name}</td>
         <td>{item.order}</td>
         <td>{item.price}</td>
     </tr>
@@ -103,35 +103,35 @@ const latestOrders = {
     body: [
         {
             id: "#OD1711",
-            user: "john doe",
+            name: "john doe",
             date: "17 Jun 2021",
             price: "$900",
             status: "shipping"
         },
         {
             id: "#OD1712",
-            user: "frank iva",
+            name: "frank iva",
             date: "1 Jun 2021",
             price: "$400",
             status: "paid"
         },
         {
             id: "#OD1713",
-            user: "anthony baker",
+            name: "anthony baker",
             date: "27 Jun 2021",
             price: "$200",
             status: "pending"
         },
         {
             id: "#OD1712",
-            user: "frank iva",
+            name: "frank iva",
             date: "1 Jun 2021",
             price: "$400",
             status: "paid"
         },
         {
             id: "#OD1713",
-            user: "anthony baker",
+            name: "anthony baker",
             date: "27 Jun 2021",
             price: "$200",
             status: "refund"
@@ -153,7 +153,7 @@ const renderOrderHead = (item, index) => (
 const renderOrderBody = (item, index) => (
     <tr key={index}>
         <td>{item.id}</td>
-        <td>{item.user}</td>
+        <td>{item.name}</td>
         <td>{item.price}</td>
         <td>{item.date}</td>
         <td>
@@ -187,7 +187,6 @@ const Dashboard = () => {
                 </div>
                 <div className="col-6">
                     <div className="card full-height">
-                        {/* chart */}
                         <Chart
                             options={themeReducer === 'theme-mode-dark' ? {
                                 ...chartOptions.options,
